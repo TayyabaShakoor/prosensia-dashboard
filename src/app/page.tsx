@@ -5,6 +5,7 @@ import Button from "@/components/atoms/Button";
 import Card from "@/components/atoms/Card";
 import Modal from "@/components/molecules/Modal";
 import StatCard from "@/components/molecules/StatCard";
+import Input from "@/components/atoms/Input";
 
 export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -144,6 +145,22 @@ export default function Home() {
           </div>
         )}
       </Modal>
+
+      {/* Input Component Showcase */}
+<div className="mb-8">
+  <h3 className="text-xl font-semibold text-gray-800 mb-4">Input Components</h3>
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <Input label="Full Name" placeholder="Enter your name" />
+    <Input label="Email" type="email" placeholder="user@example.com" />
+    <Input label="Password" type="password" placeholder="Enter password" />
+    <Input label="Disabled Input" disabled value="Cannot edit this" />
+    <Input label="With Error" error="This field is required" />
+    <Input
+      label="Controlled Input"
+      onChange={(value) => console.log("Input changed:", value)}
+    />
+  </div>
+</div>
 
       {/* Atomic Design Documentation */}
       <div className="mt-12 p-6 bg-white rounded-xl border border-gray-200 shadow-sm">
